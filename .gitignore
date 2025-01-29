@@ -1,0 +1,20 @@
+# Ignore the .env file with sensitive data
+.env
+
+# Ignore the virtual environment folder
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+
+# Ignore any IDE/editor-specific files (VS Code in your case)
+.vscode/

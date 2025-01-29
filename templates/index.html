@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <h1>Weather App</h1>
+        <p>Get real-time weather updates from anywhere in the world!</p>
+
+        <div class="form-container">
+            <form action="/weather" method="POST">
+                <input type="text" name="city" placeholder="Enter city name" required>
+                <button type="submit">Get Weather</button>
+            </form>
+        </div>
+
+        {% if weather %}
+            <div class="weather-info">
+                <h2>Weather in {{ weather.city }}</h2>
+                <div class="weather-details">
+                    <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon">
+                    <div class="details">
+                        <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+                        <p><strong>Condition:</strong> {{ weather.description }}</p>
+                        <p><strong>Air Quality:</strong> {{ weather.air_quality }}</p>
+                        <p><strong>Rain Chance:</strong> {{ weather.rain_chance }}</p>
+                    </div>
+                </div>
+            </div>
+        {% elif error %}
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+    </main>
+
+    <footer>Developed by Anmol ❤️</footer>
+</body>
+</html>
