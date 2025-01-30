@@ -72,4 +72,4 @@ def get_weather():
         return render_template('index.html', error="City not found. Please try again.")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
